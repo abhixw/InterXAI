@@ -35,6 +35,7 @@ DEBUG = os.getenv("DEBUG", "False") == "True"
 
 ALLOWED_HOSTS = [
     "interxai-8x0e.onrender.com",
+    "interxai-1.onrender.com",
     "127.0.0.1",
     "localhost",
 ]
