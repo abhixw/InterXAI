@@ -30,9 +30,14 @@ load_dotenv()
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "False") == "True"
 
-ALLOWED_HOSTS = ["interxai.onrender.com","127.0.0.1","localhost"]
+
+ALLOWED_HOSTS = [
+    "interxai-8x0e.onrender.com",
+    "127.0.0.1",
+    "localhost",
+]
 CSRF_TRUSTED_ORIGINS = ['http://*','https://*',"https://interxai.onrender.com"]
 
 
@@ -98,7 +103,7 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
     "access-control-allow-origin",
 ]
-ROOT_URLCONF = os.getenv('ROOT_URLCONF')
+ROOT_URLCONF = 'InterXAI.urls'
 
 TEMPLATES = [
     {
@@ -114,8 +119,7 @@ TEMPLATES = [
         },
     },
 ]
-
-WSGI_APPLICATION = os.getenv('WSGI_APPLICATION')
+WSGI_APPLICATION = 'InterXAI.wsgi.application'
 
 
 # Database
