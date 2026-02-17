@@ -29,17 +29,22 @@ load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = os.getenv('SECRET_KEY')
+if not SECRET_KEY:
+    raise Exception("SECRET_KEY not set in environment")
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False") == "True"
 
 
 ALLOWED_HOSTS = [
-    "interxai-8x0e.onrender.com",
-    "interxai-1.onrender.com",
-    "127.0.0.1",
-    "localhost",
+"interxai-2.onrender.com",
+"127.0.0.1",
+"localhost",
 ]
-CSRF_TRUSTED_ORIGINS = ['http://*','https://*',"https://interxai.onrender.com"]
+CSRF_TRUSTED_ORIGINS = [
+    "https://interxai-2.onrender.com",
+]
+
 
 
 # Application definition
