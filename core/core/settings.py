@@ -103,7 +103,7 @@ CORS_ALLOW_HEADERS = [
     "x-requested-with",
     "access-control-allow-origin",
 ]
-ROOT_URLCONF = 'InterXAI.urls'
+ROOT_URLCONF = 'core.urls'
 
 TEMPLATES = [
     {
@@ -119,7 +119,7 @@ TEMPLATES = [
         },
     },
 ]
-WSGI_APPLICATION = 'InterXAI.wsgi.application'
+WSGI_APPLICATION = 'core.wsgi.application'
 
 
 # Database
